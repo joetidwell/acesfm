@@ -188,7 +188,7 @@ h1 {
       <tr>
 	<td>
 	  <div id="loginText">
-	    <div><p>Forecasting results will be available after 15 March 2013.</p><p>Please check back then.</p></div>
+	    <div><p>Forecasting results will be available after 5 March 2013.</p><p>Please check back then.</p></div>
 	    </form>
 	  </div>
 	  
