@@ -215,11 +215,12 @@ return false;
 	    </table>
 	    </div>
 	  </div>
+<div style="width: 100%; text-align: center; font-size: 12px; font-style: italic;">Contact Us: email@address.com<div>
+
 	  </td>
 	</tr>
     </tbody>
   </table>
-
 </body>
 </html>
 <?php $db = null; ?>
