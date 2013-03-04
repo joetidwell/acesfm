@@ -53,8 +53,16 @@ $message = "";
 <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
 <script type="text/javascript">
 
-$(function() {$('#userInfo').html('<?php echo $message ?>')});
+$('html').bind('keypress', function(e)
+{
+   if(e.keyCode == 13 && e.target.name != "userID")
+   {
+      return false;
+   }
+});
 
+
+$(function() {$('#userInfo').html('<?php echo $message ?>')});
 
 var idx = '<?php echo $idx;?>';
 var isWinner = '<?php echo $isWinner;?>';
