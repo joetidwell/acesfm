@@ -1,0 +1,30 @@
+<?php
+function doQuery($sql){
+
+  $host="localhost"; // Host name
+  $username="root"; // Mysql username
+  $password="grinch99"; // Mysql password
+  $db_name="fordham"; // Database name
+
+  ob_start();
+
+  // Connect to server and select databse.
+  mysql_connect("$host", "$username", "$password")or die("cannot connect");
+  mysql_select_db("$db_name")or die("cannot select DB");
+
+  $result=mysql_query($sql);
+  
+  //  echo $sql;
+
+  $result=mysql_result($result,0,"text");
+
+  //echo $result;
+
+  ob_end_flush();
+
+  return $result;
+
+
+}
+
+?>

@@ -3,15 +3,23 @@
 <head>
 
 <?php 
-if ($_POST['userID']) 
+if ($_POST['userID']) { 
   $idx = $_POST['userID'];
+
+$db = new PDO('mysql:host=localhost;dbname=fordham;charset=utf8', 'root', 'grinch99');
+
+function getData($db, $stmt) {
+   $stmt = $db->query("$stmt");
+   return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+$results = getData($db, "SELECT * FROM data WHERE idx=$idx");
+
+}
 ?>
 
-
 <LINK href="results.css" rel="stylesheet" type="text/css">
-
-
-
 
 <script type="text/javascript" src="/js/jquery-1.8.1.min.js"></script>
 <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
@@ -31,6 +39,13 @@ if (idx != '') {
 </head>
 
 <body>
+
+<pre>
+<?php
+
+print_r($results);
+?>
+</pre>
 
   <table id="content">
     <tbody>
