@@ -49,8 +49,8 @@ $message = "";
 
 <LINK href="results.css" rel="stylesheet" type="text/css">
 
-<script type="text/javascript" src="/js/jquery-1.8.1.min.js"></script>
-<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 <script type="text/javascript">
 
 $('html').bind('keypress', function(e)
