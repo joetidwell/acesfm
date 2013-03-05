@@ -14,18 +14,19 @@ if(isset($_POST['submit'])){
 
 $db = new PDO('mysql:host=localhost;dbname=fordham;charset=utf8', 'root', 'grinch99');
 
-$statement = $db->prepare("select * from data where condition = :condition");
-$statement->execute(array(':condition' => "1"));
-$row = $statement->fetchAll(); // Use fetchAll() 
 
-$idx = 62719;
 $stmt = $db->prepare("SELECT * FROM data WHERE `email` <> ''");
-#$stmt->bindParam(':name', $idx);
 $stmt->execute();
 $results = $stmt->fetchAll();
+$numEmail = $stmt->rowCount();
 
+$stmt = $db->prepare("SELECT * FROM data WHERE `didVisit` = 1");
+$stmt->execute();
+$numVisit = $stmt->rowCount();
 
-
+$stmt = $db->prepare("SELECT * FROM data WHERE `didVisit` = 1 AND `email` = ''");
+$stmt->execute();
+$numLoser = $stmt->rowCount();
 
 
 $db = null;
@@ -52,9 +53,6 @@ $db = null;
 	</head>
 	<body>
 
-<?php
-
-echo '
  <table id="box-table-a">
 	      <thead>
 		<tr>
@@ -67,18 +65,37 @@ echo '
 		</tr>
 	      </thead>
 	      <tbody>
-';
+<?php
 
 foreach ($results as $val) {
   echo '<tr><td>'.$val['idx'].'</td><td>'.$val['email'].'</td><td>'.$val['Winner_1'].'</td><td>'.$val['Winner_2'].'</td><td>'.$val['Winner_3'].'</td><td>'.$val['Winner_4'].'</td></tr>';
 }
+?>
 
-echo '
+<tr><td colspan=6>
+  
+ <table id="box-table-b">
+	      <thead>
+		<tr>
+		  <th scope="col">Unique Log-Ins</th>
+		  <th scope="col">Winners</th>
+		  <th scope="col">Non-Winners</th>
+		</tr>
+	      </thead>
+	      <tbody>
+  <tr><td><?php echo $numVisit; ?></td><td><?php echo $numEmail; ?></td><td><?php echo $numLoser; ?></td></tr>
+		</tbody>
+ </table>
+
+
+</td>
+  </tr>
+
 </tbody>
 </table>
-';
 
 
-?>
+
+
 	</body>
 	</html>
