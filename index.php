@@ -215,7 +215,7 @@ return false;
 	    </table>
 	    </div>
 	  </div>
-<div style="width: 100%; text-align: center; font-size: 12px; font-style: italic;">Contact Us: email@address.com<div>
+<div style="width: 100%; text-align: center; font-size: 12px; font-style: italic;">Contact Us: forecastingpage@gmail.com<div>
 
 	  </td>
 	</tr>
