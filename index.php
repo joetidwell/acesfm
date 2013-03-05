@@ -71,7 +71,7 @@ var isWinner = '<?php echo $isWinner;?>';
 if (idx != '') {
   var message = '';
   if (isWinner) {
-     message = "Congratulations! You won our lottery. Please type in and then submit your email address in the field below, and we will send your $30 gift certificate to Amazon.com within 48 hours.<p>Thank you for participating in our experiment!";
+     message = "Congratulations! You won our lottery. Please type in and then submit your email address in the field below, and we will send you your $30 gift certificate to Amazon.com within 48 hours.<p>Thank you for participating in our experiment!";
   } else {
      message="You were not one of our lottery winners, but thank you for participating in our experiment.<p>You're forecasting results are included below.";
  }
