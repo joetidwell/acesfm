@@ -60,13 +60,17 @@ echo '
 		<tr>
 		  <th scope="col">Code</th>
 		  <th scope="col">Email Address</th>
+		  <th scope="col">Winner 1</th>
+		  <th scope="col">Winner 2</th>
+		  <th scope="col">Winner 3</th>
+		  <th scope="col">Winner 4</th>
 		</tr>
 	      </thead>
 	      <tbody>
 ';
 
 foreach ($results as $val) {
-  echo '<tr><td>'.$val['idx'].'</td><td>'.$val['email'].'</td></tr>';
+  echo '<tr><td>'.$val['idx'].'</td><td>'.$val['email'].'</td><td>'.$val['Winner_1'].'</td><td>'.$val['Winner_2'].'</td><td>'.$val['Winner_3'].'</td><td>'.$val['Winner_4'].'</td></tr>';
 }
 
 echo '
